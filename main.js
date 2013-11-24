@@ -20,12 +20,7 @@ define(function (require, exports, module) {
     
     var keymap  = JSON.parse( require('text!keymap.json') ),
         prefix  = "brackets-wrapper.";
-
-//    if(localStorage.getItem(prefix + 'enabled') === null) {
-//		localStorage.setItem(prefix + 'enabled', "true");
-//        $("#brackets-wrapper-icon").addClass('active');
-//    }
-
+    
     function handle(symbols) {	
         if (localStorage.getItem(prefix + 'enabled') !== 'true') {
             return new $.Deferred().reject().promise();
@@ -38,7 +33,7 @@ define(function (require, exports, module) {
         var selText      = editor.getSelectedText();
                 
         if(editor){
-            editor.document.replaceRange(symbols[0] + selText + symbols[1], insertionPos, {                 line: insertionPos.line, 
+            editor.document.replaceRange(symbols[0] + selText + symbols[1], insertionPos,{                 line: insertionPos.line, 
                 ch: insertionPos.ch - selText.length
             });
             
@@ -73,7 +68,7 @@ define(function (require, exports, module) {
     
     menu.addMenuDivider();
     // Create menu item that opens the config .json-file    
-    CommandManager.register("Edit Brackets Wrapper", prefix + "open-conf", function() {
+    CommandManager.register("Edit Brackets Autoclose", prefix + "open-conf", function() {
         var src = FileUtils.getNativeModuleDirectoryPath(module) + "/keymap.json";
         
         DocumentManager.getDocumentForPath(src).done(
@@ -91,7 +86,7 @@ define(function (require, exports, module) {
     .attr({
         id: "brackets-wrapper-icon",
         href: "#",
-        title: "Brackets Autocomplete"
+        title: "Brackets Autoclose"
     })
     .on('click', function() {
         $(this).toggleClass('active');
