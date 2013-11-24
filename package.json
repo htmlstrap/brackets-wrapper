@@ -1,9 +1,9 @@
 {
     "name": "brackets-wrapper",
-    "title": "Brackets Wrapper",
-    "description": "Wrap selected text with braces, curly-braces, parentheses, quotes and double quotes just like Sublime Text does. If no text selected, pressed symbol would be completed with closing symbol ('{' with '}' and so forth)",
+    "title": "Brackets Autoclose",
+    "description": "Autoclose braces, curly-braces, parentheses, quotes and double quotes just like Sublime Text does. If there is selected text, extension will wrap selection with pressed symbol ('text' becomes '{text}', '[text]' and so forth). You can edit which symbols process.",
     "homepage": "https://github.com/vhornets/brackets-wrapper",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "author": "Vhornets<vhornets@gmail.com>",
     "files": [
         "main.js",
